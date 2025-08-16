@@ -1,76 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Velavah Beverages | Under Construction</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-      color: #333;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .container {
-      max-width: 600px;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 3rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #d9534f;
-    }
-
-    h2 {
-      font-weight: normal;
-      margin-bottom: 2rem;
-      color: #555;
-    }
-
-    .logo {
-      width: 100px;
-      margin-bottom: 1.5rem;
-    }
-
-    .footer {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction - Coming Soon!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom animation for the progress bar */
+        @keyframes progress-animation {
+            from { width: 0%; }
+        }
+        .progress-bar-inner {
+            animation: progress-animation 2s ease-out forwards;
+        }
+        /* Animated gradient background */
+        .animated-gradient {
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
 </head>
-<body>
-  <div class="container">
-    <!-- <img src="https://via.placeholder.com/100x100?text=Logo" alt="Velavah Beverages Logo" class="logo" /> -->
-    <h1>🚧 Site Under Construction</h1>
-    <h2>We're crafting something refreshing at Velavah Beverages.<br>Please check back soon.</h2>
-    <div class="footer">
-      &copy; 2025 Velavah Beverages. All rights reserved.
-      <div class="love-note">With ❤️ from India</div>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8 animated-gradient bg-gradient-to-r from-gray-800 via-gray-900 to-black">
+
+    <div class="w-full max-w-4xl mx-auto text-center bg-gray-900 bg-opacity-60 backdrop-blur-lg p-8 sm:p-12 rounded-2xl shadow-2xl border border-gray-700">
+        
+        <!-- Header Section -->
+        <div class="mb-8">
+            <svg class="w-16 h-16 mx-auto mb-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500 tracking-tight">We're Launching Soon!</h1>
+            <p class="mt-4 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">Our team is working hard to bring you something amazing. We're putting the final touches on our new website and can't wait for you to see it.</p>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div id="countdown" class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-2xl mx-auto mb-8">
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <div id="days" class="text-4xl sm:text-5xl font-bold text-indigo-400">00</div>
+                <div class="text-sm text-gray-400 uppercase tracking-wider">Days</div>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <div id="hours" class="text-4xl sm:text-5xl font-bold text-indigo-400">00</div>
+                <div class="text-sm text-gray-400 uppercase tracking-wider">Hours</div>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <div id="minutes" class="text-4xl sm:text-5xl font-bold text-indigo-400">00</div>
+                <div class="text-sm text-gray-400 uppercase tracking-wider">Minutes</div>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <div id="seconds" class="text-4xl sm:text-5xl font-bold text-indigo-400">00</div>
+                <div class="text-sm text-gray-400 uppercase tracking-wider">Seconds</div>
+            </div>
+        </div>
+        
+        <!-- Progress Bar -->
+        <div class="w-full max-w-2xl mx-auto mb-8">
+            <div class="flex justify-between mb-1">
+                <span class="text-base font-medium text-gray-300">Progress</span>
+                <span id="progress-text" class="text-sm font-medium text-gray-300">0%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                <div id="progress-bar" class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2.5 rounded-full progress-bar-inner" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- Subscription Form -->
+        <div class="mt-10">
+            <h2 class="text-2xl font-bold mb-2">Be the first to know!</h2>
+            <p class="text-gray-400 mb-6">Subscribe to our newsletter to get notified when we go live.</p>
+            <form id="subscribe-form" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" id="email-input" placeholder="Enter your email address" required class="w-full px-5 py-3 text-white bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300">
+                <button type="submit" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">Notify Me</button>
+            </form>
+            <div id="success-message" class="hidden mt-4 text-green-400">Thank you! We'll be in touch soon.</div>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="mt-12">
+            <p class="text-gray-500 mb-4">Follow us on social media for updates:</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zm0 1.623c-2.403 0-2.72.009-3.667.053a3.272 3.272 0 00-1.178.22c-.577.228-1.002.512-1.427.937-.425.425-.71.85-1.002 1.427-.22.577-.269 1.178-.22 1.772-.045.946-.053 1.263-.053 3.667s.008 2.72.053 3.667c.049.594.22 1.178.22 1.772.228.577.512 1.002.937 1.427.425.425.85.71 1.427.937.594.22 1.178.269 1.772.22.946.045 1.263.053 3.667.053s2.72-.008 3.667-.053c.594-.049 1.178-.22 1.772-.22.577-.228 1.002-.512 1.427-.937.425-.425.71-.85.937-1.427.22-.594.269-1.178.22-1.772.045-.946.053-1.263.053-3.667s-.008-2.72-.053-3.667c-.049-.594-.22-1.178-.22-1.772-.228-.577-.512-1.002-.937-1.427-.425-.425-.85-.71-1.427-.937-.594-.22-1.178-.269-1.772-.22-.946-.045-1.263-.053-3.667-.053zM12 8.118a3.882 3.882 0 100 7.764 3.882 3.882 0 000-7.764zm0 6.132a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+        </div>
+
     </div>
-  </div>
+
+    <script>
+        // --- CONFIGURATION ---
+        // Set your target launch date here (Year, Month - 1, Day, Hour, Minute, Second)
+        // Set for 30 days from Aug 16, 2025 -> Sep 15, 2025
+        const launchDate = new Date(2025, 8, 15, 9, 0, 0).getTime(); 
+        const startDate = new Date(2025, 7, 16, 9, 0, 0).getTime(); // The date when the "construction" started
+
+        const countdownFunction = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the respective elements
+            document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+            
+            // Progress Bar Calculation
+            const totalDuration = launchDate - startDate;
+            const elapsedDuration = now - startDate;
+            let progressPercentage = (elapsedDuration / totalDuration) * 100;
+            progressPercentage = Math.min(100, Math.max(0, progressPercentage)); // Clamp between 0 and 100
+
+            document.getElementById("progress-bar").style.width = progressPercentage + '%';
+            document.getElementById("progress-text").innerText = Math.round(progressPercentage) + '%';
+
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = '<div class="col-span-2 sm:col-span-4 text-3xl font-bold text-green-400">We are live!</div>';
+                document.getElementById("progress-bar").style.width = '100%';
+                document.getElementById("progress-text").innerText = '100%';
+            }
+        }, 1000);
+
+        // Handle subscription form submission
+        const subscribeForm = document.getElementById('subscribe-form');
+        subscribeForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('email-input');
+            const successMessage = document.getElementById('success-message');
+            
+            if (emailInput.value) {
+                // Here you would typically send the email to your backend service
+                // For this demo, we'll just show a success message.
+                subscribeForm.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+            }
+        });
+    </script>
+
 </body>
 </html>
