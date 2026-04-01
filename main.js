@@ -110,13 +110,15 @@ function getScrollAmount() {
   return 340;
 }
 
-prevBtn.addEventListener('click', () => {
-  carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-});
+if (carousel && prevBtn && nextBtn) {
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+  });
 
-nextBtn.addEventListener('click', () => {
-  carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-});
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+  });
+}
 
 // Contact form
 document.getElementById('contactForm').addEventListener('submit', (e) => {
