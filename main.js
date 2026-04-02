@@ -121,19 +121,22 @@ if (carousel && prevBtn && nextBtn) {
 }
 
 // Contact form
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  btn.textContent = 'Message Sent!';
-  btn.style.background = '#059669';
-  btn.style.borderColor = '#059669';
-  setTimeout(() => {
-    btn.textContent = 'Send Message';
-    btn.style.background = '';
-    btn.style.borderColor = '';
-    e.target.reset();
-  }, 3000);
-});
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = 'Message Sent!';
+    btn.style.background = '#059669';
+    btn.style.borderColor = '#059669';
+    setTimeout(() => {
+      btn.textContent = 'Send Message';
+      btn.style.background = '';
+      btn.style.borderColor = '';
+      e.target.reset();
+    }, 3000);
+  });
+}
 
 // Scroll reveal animation
 const observerOptions = {
