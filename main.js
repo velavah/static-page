@@ -286,32 +286,30 @@ document.addEventListener('DOMContentLoaded', function() {
 function initFunkyAnimations() {
   const elements = document.querySelectorAll('.hero-funky-content > *');
 
+  // Hide everything up front in one pass, then stagger only the reveal —
+  // delaying the hide makes already-painted elements flicker off and back on.
   elements.forEach((el, index) => {
-    setTimeout(() => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
 
-      setTimeout(() => {
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-      }, 50);
-    }, index * 100);
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 50 + index * 100);
   });
 
   // Animate visual
   const visual = document.querySelector('.hero-funky-visual');
   if (visual) {
-    setTimeout(() => {
-      visual.style.opacity = '0';
-      visual.style.transform = 'scale(0.8) rotate(-10deg)';
-      visual.style.transition = 'all 1s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    visual.style.opacity = '0';
+    visual.style.transform = 'scale(0.8) rotate(-10deg)';
+    visual.style.transition = 'all 1s cubic-bezier(0.34, 1.56, 0.64, 1)';
 
-      setTimeout(() => {
-        visual.style.opacity = '1';
-        visual.style.transform = 'scale(1) rotate(0deg)';
-      }, 50);
-    }, 300);
+    setTimeout(() => {
+      visual.style.opacity = '1';
+      visual.style.transform = 'scale(1) rotate(0deg)';
+    }, 350);
   }
 }
 
